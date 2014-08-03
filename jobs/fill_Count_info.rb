@@ -9,15 +9,15 @@ mychanged = 42 # unimportant, which value
 
 SCHEDULER.every '5s', :first_in => 0 do
 	# update as fast as possible after the update of the counts-Skript. And then wait for the next value.
- changedfile = open('../freifunk/changevalue.txt') { |f| f.read }
+ changedfile = open('../freifunk-counts/changevalue.txt') { |f| f.read }
  if mychanged != changedfile
   aktClientCount2 = aktClientCount
   aktNodeCount2 = aktNodeCount
  
-  aktNodeCount = open('../freifunk/Nodecount/aktNodecount.txt') { |f| f.read }
-  maxNodeCount = open('../freifunk/Nodecount/maxNodecount.txt') { |f| f.read }
-  aktClientCount = open('../freifunk/Clientcount/aktClientcount.txt') { |f| f.read }
-  maxClientCount = open('../freifunk/Clientcount/maxClientcount.txt') { |f| f.read }
+  aktNodeCount = open('../freifunk-counts/Nodecount/aktNodecount.txt') { |f| f.read }
+  maxNodeCount = open('../freifunk-counts/Nodecount/maxNodecount.txt') { |f| f.read }
+  aktClientCount = open('../freifunk-counts/Clientcount/aktClientcount.txt') { |f| f.read }
+  maxClientCount = open('../freifunk-counts/Clientcount/maxClientcount.txt') { |f| f.read }
 
   # only show the difference in percent, if the value has changed
   if aktClientCount2 == aktClientCount
