@@ -20,6 +20,7 @@ trafficpoints="[
 {\"x\":${21},\"y\":${22} },
 {\"x\":${23},\"y\":${24} },
 {\"x\":${25},\"y\":${26} }]"
+traffic_akt=${27}
 
 curl -d "{ \"auth_token\": \"$auth_token\", \"current\": \"$aktNodeCount\", \"last\": \"$aktNodeCount_prev\" }" \
 	\http://$host/widgets/aktNodeCount
@@ -29,5 +30,5 @@ curl -d "{ \"auth_token\": \"$auth_token\", \"current\": \"$maxNodeCount\"}" \
 	\http://$host/widgets/maxNodeCount
 curl -d "{ \"auth_token\": \"$auth_token\", \"current\": \"$maxClientCount\"}" \
 	\http://$host/widgets/maxClientCount
-curl -d "{ \"auth_token\": \"$auth_token\", \"points\": $trafficpoints }" \
+curl -d "{ \"auth_token\": \"$auth_token\", \"points\": $trafficpoints , \"displayedValue\":\"$traffic_akt\"}" \
 	\http://$host/widgets/aktTraffic
