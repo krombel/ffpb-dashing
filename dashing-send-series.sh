@@ -5,6 +5,8 @@ auth_token="bitnhmlj47hamrftxkiug"
 
 metric=$1
 shift
+traffic_akt=$1
+shift
 
 points="["
 while (( "$#" )); do
@@ -18,6 +20,6 @@ while (( "$#" )); do
 done
 points="${points}]"
 
-info="{ \"auth_token\": \"$auth_token\", \"points\": $points }"
+info="{ \"auth_token\": \"$auth_token\", \"points\": $points , \"displayedValue\":\"$traffic_akt\"}"
 echo $info
 curl -d "$info" http://$host/widgets/$metric
