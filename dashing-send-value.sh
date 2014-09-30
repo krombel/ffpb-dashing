@@ -1,6 +1,6 @@
 #!/bin/sh
 
-host="dashing.krombel.de:3030"
+host="localhost:3030"
 auth_token="bitnhmlj47hamrftxkiug"
 
 metric=$1

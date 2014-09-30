@@ -1,7 +1,7 @@
 class Dashing.Highscore extends Dashing.Widget
 	@accessor 'current', Dashing.AnimatedValue
   
-	@accessor 'archievedAtMessage', ->
+	@accessor 'archievedAt', ->
 		if archievedAt = @get('archievedAt')
 			timestamp = new Date(archievedAt * 1000)
 		#	year = timestamp.getYears()
@@ -9,9 +9,9 @@ class Dashing.Highscore extends Dashing.Widget
 		#	day = timestamp.getDays()
 			hours = timestamp.getHours()
 			minutes = ("0" + timestamp.getMinutes()).slice(-2)
-			"Erreicht: #{hours}:#{minutes}"
+		"Erreicht: \#{hours}:\#{minutes}"
       
-#  ready: ->
+  ready: ->
     # This is fired when the widget is done being rendered
 
   onData: (data) ->
