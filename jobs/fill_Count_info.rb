@@ -42,9 +42,9 @@ SCHEDULER.every '5s', :first_in => 0 do
   lastMaxNodeCountDate = maxNodeCountDate
  end # if maxNodeCount changed 
  
- maxClientCount = open('../freifunk-counts/Clientcount/maxClientcount.txt') { |f| f.read }
+ maxClientCountDate = open('../freifunk-counts/Clientcount/maxClientcount.date.txt') { |f| f.read }
  if lastMaxClientCountDate != maxClientCountDate
-  maxClientCountDate = open('../freifunk-counts/Clientcount/maxClientcount.date.txt') { |f| f.read }
+  maxClientCount = open('../freifunk-counts/Clientcount/maxClientcount.txt') { |f| f.read }
   send_event('maxClientCount', { current: maxClientCount, archievedAt: maxClientCountDate })
   lastMaxClientCountDate = maxClientCountDate
  end # if maxClientCount changed
