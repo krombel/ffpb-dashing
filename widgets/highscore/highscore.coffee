@@ -1,6 +1,4 @@
-class Dashing.Highscore extends Dashing.Widget      
-#  ready: ->
-    # This is fired when the widget is done being rendered
+class Dashing.Highscore extends Dashing.Widget
     
   @accessor 'archievedAtMessage', ->
     if @get('archievedAt')
@@ -11,8 +9,12 @@ class Dashing.Highscore extends Dashing.Widget
       hours = parseInt(timestamp.getHours())
       minutes = parseInt(timestamp.getMinutes())
       "Erreicht: #{day}.#{month}.#{year} #{hours}:#{minutes}"
-    else
-      ""
+    else    	 
+      timestamp = new Date(@get('updatedAt') * 1000)
+      hours = timestamp.getHours()
+      minutes = ("0" + timestamp.getMinutes()).slice(-2)
+      "Last updated at #{hours}:#{minutes}"
+
 
   onData: (data) ->
     if data.status
