@@ -2,15 +2,15 @@ class Dashing.Highscore extends Dashing.Widget
 #  ready: ->
     # This is fired when the widget is done being rendered
     
-  @accessor 'archievedAt', ->
+  @accessor 'archievedAtMessage', ->
     if @get('archievedAt')
       timestamp = new Date(@get('archievedAt') * 1000)
-      year = parseInt(timestamp.getYears())
-      month = parseInt(timestamp.getMonths())
-      day = parseInt(timestamp.getDays())
+      year = parseInt(timestamp.getFullYear())
+      month = parseInt(timestamp.getMonth())+1
+      day = parseInt(timestamp.getDate())
       hours = parseInt(timestamp.getHours())
-      minutes = parseInt(timestamp.getMinutes().slice(-2))
-      "Erreicht: \#{hours}:\#{minutes}"
+      minutes = parseInt(timestamp.getMinutes())
+      "Erreicht: #{day}.#{month}.#{year} #{hours}:#{minutes}"
     else
       ""
 
