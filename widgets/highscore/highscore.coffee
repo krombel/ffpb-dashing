@@ -1,4 +1,5 @@
 class Dashing.Highscore extends Dashing.Widget
+  @accessor 'current', Dashing.AnimatedValue
     
   @accessor 'archievedAtMessage', ->
     if @get('archievedAt')
@@ -14,7 +15,6 @@ class Dashing.Highscore extends Dashing.Widget
       hours = timestamp.getHours()
       minutes = ("0" + timestamp.getMinutes()).slice(-2)
       "Last updated at #{hours}:#{minutes}"
-
 
   onData: (data) ->
     if data.status
