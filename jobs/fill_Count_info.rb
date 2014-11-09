@@ -1,6 +1,13 @@
 # :first_in sets how long it takes before the job is first run. In this case, it is run immediately
 #require 'open-uri'
+# require "freifunk-counts" running and located in $dashing-home/../freifunk-counts/
 
+# How to read stuff outside of our dashboard
+#require 'open-uri'
+#file_contents = open('local-file.txt') { |f| f.read }
+#web_contents  = open('http://www.stackoverflow.com') {|f| f.read }
+
+## init used variables
 aktClientCount = 0
 aktNodeCount = 0
 maxClientCount = 521
@@ -12,11 +19,13 @@ lastMaxClientCountDate = 0
 
 SCHEDULER.every '5s', :first_in => 0 do
 	# update as fast as possible after the update of the counts-Skript. And then wait for the next value.
+ # read "changevalue.txt". This value changes on evry update. Unimportant which value.
+ # It is used to update my dashboard as soon as possible after updates of "freifunk-counts"
  aktValueChanged = open('../freifunk-counts/changevalue.txt') { |f| f.read }
  if lastAktValueChanged != aktValueChanged
   aktClientCount2 = aktClientCount
   aktNodeCount2 = aktNodeCount
- 
+
   aktNodeCount = open('../freifunk-counts/Nodecount/aktNodecount.txt') { |f| f.read }
   aktClientCount = open('../freifunk-counts/Clientcount/aktClientcount.txt') { |f| f.read }
 
@@ -33,8 +42,9 @@ SCHEDULER.every '5s', :first_in => 0 do
   	send_event('aktNodeCount', { current: aktNodeCount, last: aktNodeCount2 })
   end
   lastAktValueChanged = aktValueChanged
- end # if aktValueChanged
+ end # if lastAktValueChanged != aktValueChanged
  
+ ## Update Highscore in dashboard if a new highscore is achieved
  maxNodeCountDate = open('../freifunk-counts/Nodecount/maxNodecount.date.txt') { |f| f.read }
  if lastMaxNodeCountDate != maxNodeCountDate
   maxNodeCount = open('../freifunk-counts/Nodecount/maxNodecount.txt') { |f| f.read }
@@ -49,7 +59,3 @@ SCHEDULER.every '5s', :first_in => 0 do
   lastMaxClientCountDate = maxClientCountDate
  end # if maxClientCount changed
 end
-
-#require 'open-uri'
-#file_contents = open('local-file.txt') { |f| f.read }
-#web_contents  = open('http://www.stackoverflow.com') {|f| f.read }
