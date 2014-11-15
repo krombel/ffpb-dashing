@@ -1,7 +1,5 @@
 #!/bin/sh
-
-host="dashing.krombel.de:3030"
-auth_token="bitnhmlj47hamrftxkiug"
+. ./loadServerdata.sh
 
 metric=$1
 url=$2
