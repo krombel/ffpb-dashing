@@ -1,13 +1,15 @@
 <% content_for :title do %>Freifunk-Netzwerk-Übersicht<% end %>
 <div class="gridster">
   <ul>
-<!--
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+<!--    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/ff_logo.png" style="background-color:#F7F5E7;"></div>
     </li>
---> 
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="traffic_sum" data-view="Traffic" data-title="aktueller Traffic" data-moreinfo="in Gigabyte" data-prefix=""></div>
+      <div data-id="aktTraffic" data-view="Graph" data-title="aktueller Traffic" data-moreinfo="in Gigabyte" data-prefix=""></div>
+    </li>
+-->    
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="TrafficFrame" data-view="Iframe" style="background-color:#fff"></div>
     </li>
 
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
@@ -17,12 +19,11 @@
            style="background-image:url(/assets/ffpb-blass.png); background-repeat:no-repeat; background-color:#fff; background-position:50% 50%">
       </div>
 
-<!-- 
     </li>
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="ClientNodecountFrame" data-view="Iframe" style="background-color:#fff"></div>
     </li>
-   
+<!--    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="testNumber" data-view="Number" data-title="Test-Kachel" style="background-color:#47bbb3"></div>
     </li>
@@ -34,15 +35,11 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="lastNodes" data-view="List" data-unordered="false" data-title="Die neuesten Knoten" data-moreinfo=""></div>
     </li>
-  
+-->    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aktNodeCount" data-view="Number" data-title="aktuelle Knoten-Anzahl" style="background-color:#ff9618"></div>
     </li>    
--->     
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="NodeCountGraph" data-view="Traffic" data-title="aktuelle Knoten-Anzahl" style="background-color:#ff9618" data-moreinfo="" data-prefix=""></div>
-    </li>
-
+    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="maxNodeCount" data-view="Highscore" data-title="Unser Knoten-Highscore" style="background-color:#ff9618"></div>
     </li>
@@ -50,15 +47,11 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="maxClientCount" data-view="Highscore" data-title="Unser Client-Highscore" style="background-color:#96bf48;"></div>
     </li>
-    
-    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
-      <div data-id="ClientCountGraph" data-view="Traffic" data-title="aktuelle Nutzeranzahl" style="background-color:#96bf48;" data-moreinfo="" data-prefix=""></div>
-    </li>
-<!-- 
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aktClientCount" data-view="Number" data-title="aktuelle Client-Anzahl" style="background-color:#96bf48;"></div>
     </li>
-   
+<!--    
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Clock"></div>
       <i class="icon-time icon-background"></i>

@@ -7,13 +7,17 @@
     
     <li data-row="1" data-col="1" data-sizex="2" data-sizey="1">
 <!--  <div data-id="welcome" data-view="Text" data-title="Guten Tag" data-text="Hier eine kleine Übersicht über das &nbsp; Paderborner Freifunk-Netz" data-moreinfo="Aktuell im Entwicklungs-Zustand"></div>-->
-      <div data-id="welcome" data-view="Text" data-title="Guten Tag" data-text="Hier eine kleine Übersicht über das &nbsp; Paderborner Freifunk-Netz" data-moreinfo=""></div>
+      <div data-id="welcome" data-view="Text" data-title="Guten Tag" data-text="Hier eine kleine Übersicht über das &nbsp; Paderborner Freifunk-Netz" data-moreinfo="" ></div>
     </li>
     
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="traffic_sum" data-view="Graphitegraph" data-title="aktueller Traffic" data-moreinfo="in Gigabyte" data-prefix="" style="background-color:#DC3C67;"></div>
+    </li>
+<!--    
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-view="Image" data-image="/ff_logo.png" style="background-color:#F7F5E7;"></div>
     </li>
-<!--
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="ClientcountFrame" data-view="Iframe" data-title="Test-Kachel" style="background-color:#fff"></div>
     </li>
@@ -24,11 +28,15 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="lastNodes" data-view="List" data-unordered="true" data-title="Die letzten Knoten, die dazu kamen" data-moreinfo=""></div>
     </li>
--->
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aktNodeCount" data-view="Number" data-title="aktuelle Knoten-Anzahl" style="background-color:#ff9618"></div>
     </li>    
-    
+-->    
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="NodeCountGraph" data-view="Graphitegraph" data-title="aktuelle Knoten-Anzahl" style="background-color:#ff9618" data-moreinfo="" data-prefix=""></div>
+    </li>
+
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="maxNodeCount" data-view="Highscore" data-title="Unser Knoten-Highscore" style="background-color:#ff9618"></div>
     </li>
@@ -36,9 +44,14 @@
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="maxClientCount" data-view="Highscore" data-title="Unser Nutzer-Highscore" style="background-color:#96bf48;"></div>
     </li>
-
+    
+    <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
+      <div data-id="ClientCountGraph" data-view="Graphitegraph" data-title="aktuelle Nutzeranzahl" style="background-color:#96bf48;" data-moreinfo="" data-prefix=""></div>
+    </li>
+<!--
     <li data-row="1" data-col="1" data-sizex="1" data-sizey="1">
       <div data-id="aktClientCount" data-view="Number" data-title="aktuelle Nutzer-Anzahl" style="background-color:#96bf48;"></div>
     </li>
+-->
   </ul>
 </div>

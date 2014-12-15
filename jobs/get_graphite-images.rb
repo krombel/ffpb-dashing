@@ -15,8 +15,8 @@ SCHEDULER.every '15m', :first_in => 0 do
     file << open(usageURL).read
   end
 
-# download graph fÃor Gateway-Traffic
-  trafficURL='http://graphite.paderborn.freifunk.net/render?width=270&from=-24hours&until=now&height=340&target=alias(sumSeries(ffpb.gateways.gw02.vpn.rxbytes_per_second%2Cffpb.gateways.gw03.vpn.rxbytes_per_second%2Cffpb.gateways.gw04.vpn.rxbytes_per_second%2Cffpb.gateways.gw05.vpn.rxbytes_per_second%2Cffpb.gateways.gw06.vpn.rxbytes_per_second%2Cffpb.gateways.gw01.vpn.rxbytes_per_second)%2C%22Empfangen%22)&target=alias(sumSeries(ffpb.gateways.gw01.vpn.txbytes_per_second%2Cffpb.gateways.gw02.ipv6.txbytes_per_second%2Cffpb.gateways.gw02.vpn.txbytes_per_second%2Cffpb.gateways.gw03.vpn.txbytes_per_second%2Cffpb.gateways.gw04.vpn.txbytes_per_second%2Cffpb.gateways.gw05.vpn.txbytes_per_second%2Cffpb.gateways.gw06.vpn.txbytes_per_second)%2C%22Gesendet%22)&title=Bytes%20%2F%20s%20ueber%20alle%20Gateways'
+# download graph for Gateway-Traffic
+  trafficURL='http://graphite.paderborn.freifunk.net/render?width=270&from=-24hours&until=now&height=340&target=alias(sumSeries(ffpb.gateways.gw01.vpn.rxbytes_per_second%2Cffpb.gateways.gw02.ipv6.txbytes_per_second%2Cffpb.gateways.gw02.vpn.rxbytes_per_second%2Cffpb.gateways.gw03.vpn.rxbytes_per_second%2Cffpb.gateways.gw04.vpn.rxbytes_per_second%2Cffpb.gateways.gw05.vpn.rxbytes_per_second%2Cffpb.gateways.gw06.vpn.rxbytes_per_second)%2C%22Empfangen%22)&target=alias(sumSeries(ffpb.gateways.gw01.vpn.txbytes_per_second%2Cffpb.gateways.gw02.ipv6.txbytes_per_second%2Cffpb.gateways.gw02.vpn.txbytes_per_second%2Cffpb.gateways.gw03.vpn.txbytes_per_second%2Cffpb.gateways.gw04.vpn.txbytes_per_second%2Cffpb.gateways.gw05.vpn.txbytes_per_second%2Cffpb.gateways.gw06.vpn.txbytes_per_second)%2C%22Gesendet%22)&title=Bytes%20%2F%20s%20ueber%20alle%20Gateways'
   open('assets/images/aktTrafficGraph.png', 'wb') do |file|
     file << open(trafficURL).read
   end
