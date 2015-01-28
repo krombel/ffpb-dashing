@@ -2,3 +2,6 @@ history.yml
 send-scripts/loadServerdata.sh
 assets/images/aktTrafficGraph.png
 assets/images/aktUsageGraph.png
+maxClient.txt
+maxNodes.txt
+maxTraffic.txt
