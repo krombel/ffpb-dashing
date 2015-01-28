@@ -101,7 +101,7 @@ class Graphite
  
         (datapoints.select { |el| not el[0].nil? }).each do|item|
             aktValue = self.get_value(item)
-            highscore.checkAndSet aktValue, Time.now.to_i
+            highscore.checkAndSet aktValue, get_timestamp(item)
             points << { x: count, y: aktValue}
             count += 1
         end
@@ -114,6 +114,11 @@ class Graphite
     def get_value(datapoint)
         value = datapoint[0] || 0
         return value.round(2)
+    end
+
+    def get_timestamp(datapoint)
+        value = datapoint[1] || 0
+        return value
     end
  
     def value(name, since=nil)
