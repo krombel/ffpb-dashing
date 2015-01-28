@@ -9,9 +9,15 @@ require 'time'
  
 # Set the graphite host and port (ip or hostname)
 GRAPHITE_HOST = 'graphite.paderborn.freifunk.net'
+<<<<<<< HEAD
 ### inserted following line in /etc/hosts: #######
 ## fdca:ffee:ff12:a255::da7a graphite.ffpb	##
 ##################################################
+=======
+### inserted following line in /etc/hosts: ######
+## fdca:ffee:ff12:a255::da7a graphite.ffpb	#
+#################################################
+>>>>>>> 5257db3878ac59875ae450aa8133d46af9de2c56
 #GRAPHITE_HOST = 'graphite.ffpb'
 GRAPHITE_PORT = '80'
 INTERVAL = '30s'
